@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OtpResponseDto {
+    private String otp;
     private String phone;
     private String message;
 }
