@@ -1,7 +1,7 @@
 package com.pragma.powerup.infrastructure.exceptionhandler;
 
 public enum ExceptionResponse {
-    NO_DATA_FOUND("No data found for the requested petition");
+    ERROR_SENDING_SMS("No se logro enviar el SMS");
 
     private final String message;
 

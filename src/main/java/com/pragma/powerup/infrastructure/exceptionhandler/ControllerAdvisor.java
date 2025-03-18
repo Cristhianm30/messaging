@@ -1,6 +1,6 @@
 package com.pragma.powerup.infrastructure.exceptionhandler;
 
-import com.pragma.powerup.infrastructure.exception.NoDataFoundException;
+import com.pragma.powerup.domain.exception.ErrorSendingSmsException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -14,11 +14,11 @@ public class ControllerAdvisor {
 
     private static final String MESSAGE = "message";
 
-    @ExceptionHandler(NoDataFoundException.class)
-    public ResponseEntity<Map<String, String>> handleNoDataFoundException(
-            NoDataFoundException ignoredNoDataFoundException) {
+    @ExceptionHandler(ErrorSendingSmsException.class)
+    public ResponseEntity<Map<String, String>> errorSendingSmsException(
+            ErrorSendingSmsException errorSendingSmsException) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body(Collections.singletonMap(MESSAGE, ExceptionResponse.NO_DATA_FOUND.getMessage()));
+                .body(Collections.singletonMap(MESSAGE, ExceptionResponse.ERROR_SENDING_SMS.getMessage()));
     }
     
 }

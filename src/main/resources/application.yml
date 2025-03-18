@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8082
 
 spring:
   datasource:
@@ -11,5 +11,12 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+twilio:
+  account-sid: ${TWILIO_ACCOUNT_SID}
+  auth-token: ${TWILIO_AUTH_TOKEN}
+  phone-number: ${TWILIO_PHONE_NUMBER}
+
+
 appDescription: "Pragma Powerup"
 appVersion: "1.0.0"
