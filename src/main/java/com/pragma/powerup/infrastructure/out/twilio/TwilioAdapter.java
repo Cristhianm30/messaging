@@ -33,6 +33,7 @@ public class TwilioAdapter implements IOtpPersistencePort {
     public void sendOtp(Otp otp) {
         try {
             Message.creator(
+//                    con "whatsapp:"+ o sin //
                     new PhoneNumber("whatsapp:"+otp.getPhone()),
                     new PhoneNumber("whatsapp:"+twilioPhoneNumber),
                     otp.getMessage()
